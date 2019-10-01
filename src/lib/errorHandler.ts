@@ -1,11 +1,10 @@
-import { Router, Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import logger from './logger';
 
 interface HttpError extends Error {
   status?: number;
 }
 
-const router = Router();
 // TODO: check below
 // https://medium.com/@iaincollins/error-handling-in-javascript-a6172ccdf9af
 //
@@ -29,18 +28,15 @@ process.on('uncaughtException', (err: Error, origin?: string): void => {
   // process.exit(1);
 });
 
-router.use((req: Request, res: Response): void => {
-  res.status(404);
-  res.send('Not found');
-});
-
-router.use((err: HttpError, req: Request, res: Response): void => {
+export const errorHandler = (
+  err: HttpError,
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void => {
   logger.error(err);
-  res.status(err.status || 500);
   if (!res.headersSent) {
-    res.status(500);
+    res.status(err.status || 500);
     res.json(err);
   }
-});
-
-export default router;
+};

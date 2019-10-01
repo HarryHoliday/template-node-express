@@ -1,4 +1,4 @@
-import errorHandler from '~lib/errorHandler';
+import { errorHandler } from '~lib/errorHandler';
 import logger from '~lib/logger';
 import api from './api';
 import app from './app';
