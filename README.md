@@ -1,4 +1,3 @@
-## root project v2.0 plant gateway
 
 ```bash
 npm install express
