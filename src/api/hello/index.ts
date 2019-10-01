@@ -30,6 +30,6 @@ const router = Router();
  *       200:
  *         description: hello [username]
  */
-router.use(get);
+router.get('/', get);
 
 export default router;

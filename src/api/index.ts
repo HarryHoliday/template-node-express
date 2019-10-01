@@ -1,10 +1,11 @@
 import { Router } from 'express';
 import pinoHttp from 'pino-http';
 import swaggerUi from 'swagger-ui-express';
-import swaggerSpec from './swaggerSpec';
 import logger from '~lib/logger';
-import hello from './hello';
+import swaggerSpec from './swaggerSpec';
 import notFound from './notFound';
+
+import hello from './hello';
 
 const router = Router();
 //
