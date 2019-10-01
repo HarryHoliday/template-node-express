@@ -14,4 +14,8 @@ npm install pino-pretty
 npm install --save-dev @types/pino-pretty
 npm install pino-http
 npm install --save-dev @types/pino-http
+npm install swagger-ui-express
+npm install --save-dev @types/swagger-ui-express
+npm install swagger-jsdoc
+npm install --save-dev @types/swagger-jsdoc
 ```

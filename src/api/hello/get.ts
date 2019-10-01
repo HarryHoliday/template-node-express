@@ -4,7 +4,8 @@ const router = Router();
 
 router.get('/', (req: Request, res: Response, next: NextFunction): void => {
   try {
-    res.send('hello');
+    const { username = '' } = req.query;
+    res.send(`hello ${username}`);
   } catch (error) {
     next(error);
   }
